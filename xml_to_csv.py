@@ -35,13 +35,13 @@ def xml_to_csv(path):
             classes_names.append(member[0].text)
             value = (
                 root.find("filename").text,
-                int(root.find("size")[0].text),
+                int(float(root.find("size")[0].text)),
                 int(root.find("size")[1].text),
                 member[0].text,
-                int(member[4][0].text),
-                int(member[4][1].text),
-                int(member[4][2].text),
-                int(member[4][3].text),
+                int(float(member[4][0].text)),
+                int(float(member[4][1].text)),
+                int(float(member[4][2].text)),
+                int(float(member[4][3].text)),
             )
             xml_list.append(value)
     column_name = [
